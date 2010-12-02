@@ -1,0 +1,18 @@
+# Taken from http://www.xenoterracide.com/2010/07/making-repl-usable.html
+use 5.12.0;
+use warnings;
+
+load_plugin qw(
+    Colors
+    Completion
+    CompletionDriver::INC
+    CompletionDriver::LexEnv
+    CompletionDriver::Keywords
+    CompletionDriver::Methods
+    DumpHistory
+    History
+    LexEnv
+    ReadLineHistory
+);
+
+# vim: sts=4 sw=4 et ft=perl
