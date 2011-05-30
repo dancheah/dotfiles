@@ -2,6 +2,7 @@
 use 5.12.0;
 use warnings;
 
+# Had to install B:Keywords, File::Next, Term::ReadLine::Gnu
 load_plugin qw(
     Colors
     Completion
