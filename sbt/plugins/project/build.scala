@@ -1,6 +1,7 @@
 import sbt._
 import Keys._
 
+// NP (New Project) Plugin
 object Plugins extends Build {
   lazy val root = Project("root", file("."), settings =
     Defaults.defaultSettings ++ Seq(
@@ -13,4 +14,4 @@ object Plugins extends Build {
 
 import sbt._
 
-// vim: set ts=4 sw=4 et:
+// vim: set ts=2 sw=2 et:
