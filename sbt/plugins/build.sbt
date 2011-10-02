@@ -1,17 +1,29 @@
-// SBT Eclipse Plugin
-resolvers += {
-  val typesafeRepoUrl = new java.net.URL("http://repo.typesafe.com/typesafe/releases")
-  val pattern = Patterns(false, "[organisation]/[module]/[sbtversion]/[revision]/[type]s/[module](-[classifier])-[revision].[ext]")
-  Resolver.url("Typesafe Repository", typesafeRepoUrl)(pattern)
-}
+// Eclipse Plugin
+// https://github.com/typesafehub/sbteclipse
+resolvers += Classpaths.typesafeResolver
 
-libraryDependencies <<= (libraryDependencies, sbtVersion) { (deps, version) =>
-  deps :+ ("com.typesafe.sbteclipse" %% "sbteclipse" % "1.3-RC3" extra("sbtversion" -> version))
-}
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse" % "1.4.0")
 
-// SBT IntelliJ Plugin
+// IntelliJ Plugin 
+// https://github.com/mpeltonen/sbt-idea
 resolvers += "sbt-idea-repo" at "http://mpeltonen.github.com/maven/"
 
-libraryDependencies += "com.github.mpeltonen" %% "sbt-idea" % "0.10.0"
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "0.11.0")
+
+// Assembly Plugin
+// https://github.com/eed3si9n/sbt-assembly
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.7.0")
+
+// JRebel Plugin 
+// https://github.com/Gekkio/sbt-jrebel-plugin
+resolvers += "Jawsy.fi M2 releases" at "http://oss.jawsy.fi/maven2/releases"
+
+addSbtPlugin("fi.jawsy.sbtplugins" %% "sbt-jrebel-plugin" % "0.9.0")
+
+// Web Plugin
+// https://github.com/siasia/xsbt-web-plugin
+resolvers += "Web plugin repo" at "http://siasia.github.com/maven2"    
+
+addSbtPlugin("com.github.siasia" %% "xsbt-web-plugin" % "0.1.2")
 
 // vim: sts=4 sw=2 ts=2 et ft=scala
